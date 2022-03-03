@@ -18,7 +18,7 @@ int main(){
     */
 
     cout << "List (doubly linked list in C++ STL) operations:" <<endl;
-    cout << "Declarations..........................." <<endl;
+    cout << "Declarations.........................." <<endl;
     list<int> l1, l2(5,100), l3= {11,12,13,14,15};
     disp(l1); disp(l2); disp(l3);
 
