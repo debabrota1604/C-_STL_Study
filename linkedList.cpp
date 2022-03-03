@@ -22,7 +22,7 @@ int main(){
     list<int> l1, l2(5,100), l3= {11,12,13,14,15};
     disp(l1); disp(l2); disp(l3);
 
-    cout << "Insertion.............................." <<endl;
+    cout << "Insertion..............................." <<endl;
     auto it0 = l1.begin(); //'auto' infers the type if ut is a declaration, in this case it is an integer list iterator
 
     //insert at the beginning of a list
