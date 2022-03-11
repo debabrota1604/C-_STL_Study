@@ -22,7 +22,7 @@ int lps(int index1, int index2){
     int val1 = (next_i1 <index2) ? lps(next_i1, index2) :0; //skips 1 left char and progresses to center
     int val2 = (index1 <next_i2) ? lps(index1, next_i2) :0; //skips 1 right char and progresses to center
     int val3 = (index1 < index2 && s1[index1]==s1[index2]) ? (next_i1 <= next_i2 ? lps(next_i1, next_i2): 0)+2 :0; //selects both end char and progresses to center
-    int val4 = index1 == index2 ? val4=1 :0; //case odd palindrome
+    int val4 = index1 == index2 ? val4=1 :0; //case odd palindrome of length 
 
     if (debug_print) cout  << "\tReturning after new Map entry (" << index1 << "," << index2 << ")..." <<endl;
     return m[p]= max(max(val1,val2),max(val3,val4));
