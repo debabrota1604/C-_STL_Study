@@ -30,7 +30,8 @@ int lps(int index1, int index2){
 
 int main(){
     cout << "Enter the binary sequence: ";  cin >> s1;
-    cout << "Longest palindromic substring length is: " << lps(0,s1.size()-1) <<endl;
+    auto res = lps(0,s1.size()-1);
+    cout << "Longest palindromic substring length is: " << res <<endl;
 
     if(map_print){
         cout << "Map entries are: " <<endl;

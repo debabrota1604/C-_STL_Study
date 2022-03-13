@@ -27,6 +27,7 @@ int lcs(int index1, int index2){
 int main(){
     cout << "Enter the first sequence: ";  cin >> s1;
     cout << "Enter the second sequence: "; cin >> s2; 
-    cout << "Longest common substring length is: " << lcs(0,0) <<endl;
+    auto res = lcs(0,0);
+    cout << "Longest common substring length is: " << res <<endl;
     return 0;
 }
