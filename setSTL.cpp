@@ -6,6 +6,7 @@ using namespace std;
 template<typename T>
 void disp(T t){ for(auto i:t) cout << i << " "; cout << endl;}
 
+
 template<typename T>
 void inorderSuccessor(T a,int key){
     if (a.find(key) == a.end()){ cout << "Key doesn't exist\n"; return;}  
@@ -23,7 +24,14 @@ void inorderPredecessor(T s,int key){
     auto it = s.find(key); // get iterator of key  
     // If iterator is at first position, it doesn't have predecessor
     if (it == s.begin()){ cout << "No predecessor\n"; return; }  
-    --it; // get previous element
+
+    auto it2 = s.rbegin();
+    it2 = it; it2--; cout << *(it2) << endl;
+    /*
+    for(auto i = s.begin(), j=s.begin();i< s.end();i++){ 
+        if(i== it){ it=j; break;} 
+        j=i;
+    }*/
     cout << "Predecessor of " << key << " is: " << *(it) << "\n";
 }
   
