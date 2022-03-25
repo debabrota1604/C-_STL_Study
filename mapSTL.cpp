@@ -16,5 +16,16 @@ int main(int argc, char **argv)
         cout << typeid(m.end()).name() <<endl;
         assert(i != m.end());
         std::cout << "Key: " << i->first << " Value: " << i->second << '\n';
+
+        std::map<char,pair<int,int>> cache;
+        cache['a'] = make_pair(1,2);
+        cache['b'] = make_pair(3,5);
+
+        for(auto i = cache.begin();i!=cache.end();++i){
+            cout << i->first << endl;
+        }
+
+
+
         return 0;
 }

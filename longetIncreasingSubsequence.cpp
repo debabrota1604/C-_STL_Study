@@ -10,7 +10,8 @@ int las(int endIndex){
     if (endIndex==0) { return 1; }
     if (m.count(p)) { return m[p]; }
     else{
-        las(endIndex)
+
+        return 0;
     }
 
 }
@@ -20,6 +21,7 @@ int main(){
     cout << "Enter the sequence (space seperated): ";
     seq = new int[seqLen]; for(int i=0;i<seqLen; i++){ cin >> seq[i]; }
     for(auto i=0; i<seqLen; i++){ cout << seq[i] << " "; }
+    
     
     cout << "Max Length is: " << las(seqLen-1) <<endl;
 
