@@ -31,6 +31,10 @@ class linkedList{
         else cout << "List is empty!" << endl;
     }
 
+    int getSize(){
+        return size;
+    }
+
     listNode* insertAtBeg(int nodeData){
         head = new listNode(nodeData,head);   
         size++;
@@ -63,7 +67,51 @@ class linkedList{
         }
         auto tempPtr = iter->getNextPtr();
         iter->setNextptr(new listNode(nodeData,tempPtr));
+        size++;
 
+        return head;
+    }
+
+    listNode* deleteByEl (int nodeData){
+        auto iter = head;
+
+        // code to be inserted
+
+
+        return head;
+    }
+
+    listNode* deleteByPos(int pos){
+        if (pos==1) //delete from beginning
+        {
+            auto temp = head;
+            head = head->getNextPtr();
+            delete temp;
+            size--;
+        }
+
+        else if (pos ==size) //delete from end
+        {
+            auto temp = head;
+            while(temp->getNextPtr()->getNextPtr() != nullptr){
+                temp = temp->getNextPtr();
+            }
+            auto deleteNode = temp->getNextPtr();
+            delete deleteNode;
+            temp->setNextptr(nullptr);
+            size--;
+        }
+
+        else if (pos >1 && pos < size) //delete from middle
+        {
+
+        }
+
+        else{
+            cout << "Error: Position must be >1 and <" << size << " for the current list!" << endl; return nullptr;
+        }
+
+        cout << "DeleteByPos: " << pos << ": ";
         return head;
     }
 

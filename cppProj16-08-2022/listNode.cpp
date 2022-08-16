@@ -10,19 +10,19 @@ class listNode{
     listNode(){ //unparameterised constructor
         data = 0;
         next = nullptr;
-        cout << "Constructor executed with data " << data << endl;
+        cout << "Constructor 0param: Default data " << data << endl;
     }
 
     listNode(int num){ //int linked list
         data = num;
         next = nullptr;
-        cout << "Constructor executed with data " << data << " NextPtr: " << next << endl;
+        cout << "Constructor 1param: Data " << data << " NextPtr: " << next << endl;
     }
 
     listNode(int num, listNode *nextPtr){ //int linked list
         data = num;
         next = nextPtr;
-        cout << "Constructor executed with data " << data << " NextPtr: " << next << endl;
+        cout << "Constructor 2param: Data " << data << " NextPtr: " << next << endl;
     }
 
     int getData(){

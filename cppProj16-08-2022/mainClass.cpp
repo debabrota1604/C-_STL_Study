@@ -17,6 +17,12 @@ int main(){
     l.insertAtPos(19,3);
     l.disp();
 
+    l.deleteByPos(1);
+    l.disp();
+
+    l.deleteByPos(l.getSize());
+    l.disp();
+
 
 
 
