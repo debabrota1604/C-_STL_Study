@@ -1,4 +1,5 @@
 #include<iostream>
+#include<vector>
 using namespace std;
 int count_x(char* p, char x)
 // count the number of occurrences of x in p[]
@@ -21,5 +22,8 @@ int main(){
     // cout << *s <<endl;
     cout << count_x(s,'x')<<endl;
     cout << s <<endl;
+
+
+    vector< vector< bool > > v( (10, false),false);
 
 }
