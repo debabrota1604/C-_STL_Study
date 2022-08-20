@@ -104,11 +104,13 @@ class linkedList{
 
         else if (pos >1 && pos < size) //delete from middle
         {
-
+            auto temp = head;
+            
         }
 
         else{
-            cout << "Error: Position must be >1 and <" << size << " for the current list!" << endl; return nullptr;
+            cout << "Error: Position must be >1 and <" << size << " for the current list!" << endl; 
+            return nullptr;
         }
 
         cout << "DeleteByPos: " << pos << ": ";
