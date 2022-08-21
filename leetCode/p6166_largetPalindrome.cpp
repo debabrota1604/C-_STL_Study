@@ -35,18 +35,22 @@ public:
             freq[i-'0']++;
         }
 
-        //largest odd
-        for (auto i=freq.rend(); i!=freq.rbegin();++i){
-            cout << *i << endl; getchar();
-            if ((*i)%2==0){
-                mid = to_string(*i); *i--;
+        //largest odd as mid
+        for (int i=freq.size()-1; i>=0; i--){
+            if (freq[i]%2==1){
+                mid = i + '0'; freq[i]--; break;
             }
         }
 
-
-
-
-        return mid;
+        //construct the half-palindrome
+        for( int i=freq.size()-1;i>=0; i--){
+            while(freq[i]>1){
+                halfPalin += i +'0';
+                freq[i] -=2;
+            }    
+        }
+        if (halfPalin[0] =='0') return mid;
+        else return halfPalin + mid + string(halfPalin.rbegin(), halfPalin.rend());
     }
 };
 
