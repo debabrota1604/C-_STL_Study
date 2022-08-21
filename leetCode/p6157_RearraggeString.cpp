@@ -4,22 +4,21 @@ using namespace std;
 class Solution {
 public:
     int secondsToRemoveOccurrences(string s) {
-        int val=0, rew=0;
-        for (int i=0; i<s.size()-1; i++){
-            if ( s[i]=='0' && s[i+1]=='0'){
-                rew++;
+        bool modify=false; int replaceCount; string temp;
+
+        for (replaceCount=0;replaceCount<s.size();replaceCount++){
+            modify = false; temp = s;
+            for (int i=0;i<s.size()-1;i++){
+                if (s[i]=='0' && s[i+1]=='1'){
+                    temp[i] = '1'; temp[i+1]='0';
+                    modify = true;
+                }
             }
-            else if ( s[i]=='0' && s[i+1]=='1'){
-                val++; i-=1;
-            }
-            else if ( s[i]=='1' && s[i+1]=='0'){
-                
-            }
-            else if ( s[i]=='1' && s[i+1]=='1'){
-                
-            }
+            s = temp;
+            if (modify == false)
+                break;
         }
-        return val;
+        return replaceCount;
     }
 };
 
@@ -27,7 +26,8 @@ public:
 
 int main(){
     Solution s;
-    cout << s.secondsToRemoveOccurrences("11100") << endl;
+
+    cout << s.secondsToRemoveOccurrences("0110101") << endl;
 
 
 
