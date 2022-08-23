@@ -50,13 +50,14 @@ public:
             }    
         }
         if (halfPalin[0] =='0') return mid;
+        else if (halfPalin[0] =='0' && mid == "0") return "";
         else return halfPalin + mid + string(halfPalin.rbegin(), halfPalin.rend());
     }
 };
 
 int main(){
     Solution s;
-    cout << s.largestPalindromic("444947137") << endl;
+    cout << s.largestPalindromic("00009") << endl;
 
 
 

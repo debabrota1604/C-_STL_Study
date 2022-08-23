@@ -11,11 +11,13 @@ public:
 
         /*
         Algorithm:
-        1. variables: currPos, maxGas
+        1. variables: currPos, maxGas, hopCount=0
         2. Initialize currPos = 0, maxDist = startFuel.
-        3. Find max fuel_i possible among maxDist distance. 
-            Update  maxDist = currDist + position_i, currDist = startFuel
-        4. If 
+        3. Find optimal gas station (pi,fi) between distance (currPos, maxGas). 
+            Update  maxDist = maxDist + fi, currDist = pi
+        4. If maxDist > target
+            return hopCount;
+
 
 
 
