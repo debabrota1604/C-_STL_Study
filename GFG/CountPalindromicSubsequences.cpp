@@ -6,7 +6,15 @@ using namespace std;
 // } Driver Code Ends
 class Solution{
     long long int countPalinByLen(auto mp, int len){
-        
+        if (len==1) return mp.size(); //all single chars are palindrome 
+        else{
+            if (len%2==0){ //even palindrome
+                
+            }
+            else{//odd palindrome
+
+            }
+        }
     }
     public:
     /*You are required to complete below method */
