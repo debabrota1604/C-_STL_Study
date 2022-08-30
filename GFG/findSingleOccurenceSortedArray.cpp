@@ -31,8 +31,7 @@ int findSingleElement(vector<int> &arr, int lo, int hi){
 
         else  // a[3] = a[4], a[1] = a[2].. key is in left
             return findSingleElement(arr, lo, mid-1);
-    }  
-    
+    }   
     
 }
 
