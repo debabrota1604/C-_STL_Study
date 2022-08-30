@@ -30,9 +30,9 @@ int efficientSearch(vector<int> &arr, int key){
 }
 
 int main(){
-    vector<int> vec {-5,-6,-4,-3,-4,-3,-2,-1,0,-1,-2,-1,-2,-1,0,1,2,1,2,3,4,5,4,3,4,5,6,5,6,7,8,9,8,7,6,5,4};
+    vector<int> vec {-5,-6,-5,-4,-3,-4,-3,-2,-1,0,-1,-2,-1,-2,-1,0,1,2,1,2,3,4,5,4,3,4,5,6,5,6,7,8,9,8,7,6,5,4}, vec2{1,2,1,2};
     int searchKey = 0;
-    cout << efficientSearch(vec,searchKey) << " is the lowest index where " << searchKey << " is found!" << endl;
+    cout << efficientSearch(vec2,searchKey) << " is the lowest index where " << searchKey << " is found!" << endl;
 
 
     return 0;
