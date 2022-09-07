@@ -109,7 +109,7 @@ class linkedList{
         }
 
         else{
-            cout << "Error: Position must be >1 and <" << size << " for the current list!" << endl; 
+            cout << "Error: Position must be in the range [0," << size << "] for the current list!" << endl; 
             return nullptr;
         }
 
