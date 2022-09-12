@@ -20,7 +20,7 @@ public:
         for(int i=0; i<pq.size(); i++){
             data1 = pq.top(); pq.pop();
             data2 = pq.top(); pq.pop(); 
-            if( data1 > data2) {pq.emplace(data2); pq.emplace(data1-data2);}
+            if( data1 >= data2) {pq.emplace(data2); pq.emplace(data1-data2);}
             else break;
         }
         return data1;
