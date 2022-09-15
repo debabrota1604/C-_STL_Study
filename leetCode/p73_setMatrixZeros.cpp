@@ -7,13 +7,24 @@ public:
         vector<bool> row (matrix.size(), false), col(matrix[0].size(), false);
         for(int i=0; i<matrix.size(); i++){
             for(int j=0; j<matrix[0].size(); j++){
-                p.emplace_back(make_pair(i,j));
+                if(matrix[i][j] ==0){ row[i] = true; col[j]=true;}
             }
         }
-        for(int i=0; i<)
+        
+        for(int i=0; i<matrix.size(); i++){
+            if(row[i]==0){
+                for(int j=0; j<matrix[0].size(); j++){
+                    matrix[i][j] = 0;
+                }
+            }
+        }
     }
 };
 
 int main(){
+debabrota.sadhukhan3@gmailcom
+newpass3hubgit
+
+
 
 }
