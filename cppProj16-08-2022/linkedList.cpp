@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 #include<bits/stdc++.h>
-=======
-#include<iostream>
->>>>>>> 645a4859a03730492de7d40b5c50da6ad927f396
 #include "listNode.cpp"
 using namespace std;
 
@@ -11,7 +7,6 @@ class linkedList{
     listNode *head;
     int size;
 
-<<<<<<< HEAD
     vector<int> tokenize(string s, string delim =" "){
         int start, end = -1*delim.size();
         vector<int> res;
@@ -24,8 +19,6 @@ class linkedList{
         return res;
     }
 
-=======
->>>>>>> 645a4859a03730492de7d40b5c50da6ad927f396
     public:
     linkedList(){
         head = nullptr;
@@ -50,10 +43,7 @@ class linkedList{
         else cout << "List is empty!" << endl;
     }
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 645a4859a03730492de7d40b5c50da6ad927f396
     int getSize(){
         return size;
     }
@@ -95,7 +85,6 @@ class linkedList{
         return head;
     }
 
-<<<<<<< HEAD
     //load list from file
     listNode* insertFromFile(string fName){
         linkedList();
@@ -114,15 +103,14 @@ class linkedList{
             head = head->getNextPtr();
         }
         else{
-            auto iter = head->getNextPtr();
+            auto 
+            do{
+                auto iter = head->getNextPtr();
+                if (iter->getData() == )
+            }
+            
 
         }
-=======
-    listNode* deleteByEl (int nodeData){
-        auto iter = head;
-
-        // code to be inserted
->>>>>>> 645a4859a03730492de7d40b5c50da6ad927f396
 
 
         return head;
@@ -164,7 +152,6 @@ class linkedList{
         return head;
     }
 
-<<<<<<< HEAD
 
     //Find nth node in the list
     //reverse the list
@@ -175,7 +162,5 @@ class linkedList{
     //check if list len is even and odd
     //check if list contains a palindrome
 
-=======
->>>>>>> 645a4859a03730492de7d40b5c50da6ad927f396
     
 };
