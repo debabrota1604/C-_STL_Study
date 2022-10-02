@@ -1,29 +1,22 @@
-#include<iostream>
-#include<vector>
+#include<bits/stdc++.h>
 using namespace std;
-int count_x(char* p, char x)
-// count the number of occurrences of x in p[]
-// p is assumed to point to a zero-terminated array of char (or to nothing)
-{
-    printf("%u\n",&p);
-    if (p==nullptr)
-    return 0;
-    int count = 0;
-    for (; *p!=0; ++p)
-        if (*p==x){ 
-            ++count;
-            *p = 'f';
-        }
-return count;
-}
+
+
+
 int main(){ 
-    char *s = "abxyxe";
-    printf("%u\n",&s);
-    // cout << *s <<endl;
-    cout << count_x(s,'x')<<endl;
-    cout << s <<endl;
-
-
-    vector< vector< bool > > v( (10, false),false);
-
+    int tc, n, min; cin>>tc; float ip;
+    while(tc--){
+        cin>>n; int res=0, it;
+        for(int i=0; i<n; i++){
+            cin >>ip;
+            if(i==0) min =ip;
+            else{
+                it=1; //divisor;
+                while(ceil(ip/it) >= 2*min) it++;
+                res += it-1;
+            }
+        }
+        cout << res << endl;
+    }
+    return 0;
 }
