@@ -43,7 +43,7 @@ long long  fast_exp(int base, int exp)
         base=(base*base)%MOD; exp/=2; 
     }      
     return res%MOD; 
- } 
+} 
 
 int main(){
     int a=15,b=10, x,y,z=1e9+7;

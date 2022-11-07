@@ -7,8 +7,8 @@ public:
     int destroyTargets(vector<int>& nums, int space) {
         sort(nums.begin(), nums.end());
         vector<int> destroy (nums.size(), 0); int count=0,maxInd=0;
-            for(int it=0; it<nums.size(); it++){
         for(int it2=0; it2<nums.size(); it2++){
+            for(int it=0; it<nums.size(); it++){
                 float f = nums[it2] - nums[it]; f/=space;
                 if(f -int(f) ==0 && f>=0) count++;
             }
