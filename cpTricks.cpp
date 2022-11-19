@@ -11,6 +11,9 @@ template<class T> using indexed_set = tree<T, null_type, less<T>,
 #define ld long double
 #define cy cout<<"YES\n"
 #define cn cout<<"NO\n"
+#define int int64_t
+#define sp << ' ' <<
+#define nl << '\n'
 #define pii pair<int,int>
  
 // 48-57 -> 0-9
@@ -44,6 +47,10 @@ int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
+    //OR
+    cin.tie(0)->sync_with_stdio(0);
+
+    
     // freopen("haybales.in", "r", stdin);
     // freopen("haybales.out", "w", stdout);
     int cases=1;
