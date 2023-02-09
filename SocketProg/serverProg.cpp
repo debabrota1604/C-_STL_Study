@@ -24,7 +24,7 @@ int main(int argc, char const *argv[])
 	int server_fd, new_socket, valread, opt = 1, addrlen = sizeof(address);
 	char buffer[1024] = {0};
 	string serverPid = to_string(getpid());
-	string services = "\nServices include:\n1.Sort an array\n2.Search in array\n3.Find avg in array\n4.Close Connection";
+	string services = "\nChoose any service to perform:\n1.Sort an array\n2.Search in array\n3.Find avg in array\n4.Close Connection\nChoice: ";
 	string hello = "Hello from server at pid " + serverPid + services;
 
 	// Creating socket file descriptor
@@ -83,8 +83,6 @@ int main(int argc, char const *argv[])
 
 	while((res = serveClient(new_socket, services)) != -1);
 
-	cout << "Return value: " << res << endl;
-
 	// closing the connected socket
 	close(new_socket);
 	// closing the listening socket
@@ -96,13 +94,14 @@ int serveClient(int sockFd, string services)
 {
 	char resp[MAXSIZE]={0};
 	string msg;
-	read(sockFd, resp, 1024);
-	int choice = atoi(resp), key;
 	vector<int> vec;
-	cout << "choice: [" << choice << "]\n";
+	read(sockFd, resp, 1024);
+	sleep(WAITTIME);
+	int choice = atoi(resp), key;
+	cout << "Client choose: " << choice << "\n";
 	if (choice == 1)
 	{
-		msg = "Enter an integer array seperated by spaces";
+		msg = "Enter a space-seperated integer array";
 		send(sockFd, msg.c_str(), msg.size(), 0);
 		sleep(1);
 		read(sockFd, resp, 1024);
@@ -116,7 +115,7 @@ int serveClient(int sockFd, string services)
 	}
 	else if (choice == 2)
 	{
-		msg = "Enter an integer array seperated by spaces and add search key at the end";
+		msg = "Enter a space-seperated integer array with search key at the end";
 		send(sockFd, msg.c_str(), msg.size(), 0);
 		sleep(1);
 		read(sockFd, resp, 1024);
@@ -156,7 +155,7 @@ int serveClient(int sockFd, string services)
 	}
 	else
 	{
-		msg = "Invalid option selected! Try again.";
+		msg = "Enter correct option:";
 		send(sockFd, msg.c_str(), msg.size(), 0);
 	}
 	cout << "Response sent to client" << endl;

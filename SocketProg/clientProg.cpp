@@ -63,7 +63,6 @@ int talkToServer(int sockFd)
 	string inp, arr = "6 41 3 99 75 30 28 5 65 75";
 
 	// Operation Choice
-	cout << "Choice: ";
 	cin >> inp;
 	send(sockFd, inp.c_str(), inp.size(), 0);
 	cout << "Choice sent to server\n";
@@ -72,6 +71,15 @@ int talkToServer(int sockFd)
 	sleep(WAITTIME);
 	read(sockFd, buffer, 1024);
 	cout << "Server says: " << string(buffer) << endl;
+
+	if (!strcmp("Exiting...\0", buffer)){
+		cout << "Exit Signal received from server" << endl;
+		return -1;
+	}
+	if (!strcmp("Enter correct option:\0", buffer)){
+		return 1;
+	}
+
 	send(sockFd, arr.c_str(), arr.size(), 0);
 	cout << "Input numbers sent to server\n";
 
@@ -79,11 +87,6 @@ int talkToServer(int sockFd)
 	sleep(WAITTIME);
 	read(sockFd, resp, 1024);
 	cout << "Server Response: " << resp << endl;
-
-	if (strcmp(resp, "Exiting...")){
-		cout << "Exit Signal received from server" << endl;
-		return -1;
-	}
 
 	return 1;
 }
